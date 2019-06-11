@@ -1,5 +1,9 @@
 const mongoose = require('mongoose')
-
+mongoose.connect('mongodb://localhost:27017/admin', {
+    useNewUrlParser: true
+})
+.then(() => console.log('Conectado'))
+.catch(e => console.log(e))
 const PostSchema = new mongoose.Schema({
     author: String,
     place: String,
