@@ -2,7 +2,6 @@ const Post = require('../models/Post')
 const sharp = require('sharp')
 const fs = require('fs')
 const path = require('path')
-// const mongoose = require('mongoose')  
 
 module.exports = {
     async index(req, res){
@@ -35,10 +34,10 @@ module.exports = {
             })
 
             req.io.emit('post', post)
-            console.log('qweqwe')
+            
             return res.json( post )
         } catch (e) {
-            console.log(e)
+            
             return res.json('err')
         }
 
